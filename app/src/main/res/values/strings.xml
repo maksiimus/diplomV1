@@ -8,5 +8,6 @@
     <string name="button_register">Зарегистрироваться</string>
     <string name="go_to_register">Зарегистрироваться</string>
     <string name="main_welcome">Добро пожаловать в MainActivity!</string>
+    <string name="button_logout">Выйти</string>
 
 </resources>
