@@ -37,6 +37,13 @@
             android:layout_height="wrap_content"
             android:hint="Окружность головы (см)"
             android:inputType="numberDecimal" />
+        <EditText
+            android:id="@+id/editChest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Окружность груди (см)"
+            android:inputType="numberDecimal" />
+
 
         <EditText
             android:id="@+id/editNote"

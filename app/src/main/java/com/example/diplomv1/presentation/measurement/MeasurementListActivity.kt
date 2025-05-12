@@ -28,6 +28,12 @@ class MeasurementListActivity : AppCompatActivity() {
         childId = intent.getIntExtra("childId", -1)
         val childName = intent.getStringExtra("childName") ?: ""
 
+        val backButton = findViewById<Button>(R.id.buttonBackToChildren)
+        backButton.setOnClickListener {
+            finish() // вернёт в ChildListActivity
+        }
+
+
         if (childId == -1) {
             Toast.makeText(this, "Ребёнок не найден", Toast.LENGTH_SHORT).show()
             finish()
@@ -68,6 +74,7 @@ class MeasurementListActivity : AppCompatActivity() {
                     if (m.height != null) append("Рост: ${m.height} см\n")
                     if (m.weight != null) append("Вес: ${m.weight} кг\n")
                     if (m.headCircumference != null) append("Окружность головы: ${m.headCircumference} см\n")
+                    if (m.chestCircumference != null) append("Окружность груди: ${m.chestCircumference} см\n")
                     if (m.note.isNotBlank()) append("Комментарий: ${m.note}")
                 }
                 tv.text = text

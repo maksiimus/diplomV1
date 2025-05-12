@@ -12,6 +12,14 @@
         android:text="@string/button_add_child"
         android:layout_marginBottom="16dp" />
 
+    <Button
+        android:id="@+id/buttonBackToMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="На главный экран"
+        android:layout_marginBottom="12dp" />
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -42,6 +42,11 @@ class ChildListActivity : AppCompatActivity() {
             val children = withContext(Dispatchers.IO) {
                 db.childDao().getAllByUser(userId)
             }
+            val backButton = findViewById<Button>(R.id.buttonBackToMain)
+            backButton.setOnClickListener {
+                finish() // вернёт в MainActivity
+            }
+
 
             children.forEach { child: Child ->
                 val tv = TextView(this@ChildListActivity)

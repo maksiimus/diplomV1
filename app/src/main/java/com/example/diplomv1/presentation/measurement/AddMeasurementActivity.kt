@@ -31,6 +31,7 @@ class AddMeasurementActivity : AppCompatActivity() {
         val heightField = findViewById<EditText>(R.id.editHeight)
         val weightField = findViewById<EditText>(R.id.editWeight)
         val headField = findViewById<EditText>(R.id.editHead)
+        val chestField = findViewById<EditText>(R.id.editChest)
         val noteField = findViewById<EditText>(R.id.editNote)
         val button = findViewById<Button>(R.id.buttonSaveMeasurement)
 
@@ -54,6 +55,7 @@ class AddMeasurementActivity : AppCompatActivity() {
             val height = heightField.text.toString().toFloatOrNull()
             val weight = weightField.text.toString().toFloatOrNull()
             val head = headField.text.toString().toFloatOrNull()
+            val chest = chestField.text.toString().toFloatOrNull()
             val note = noteField.text.toString()
             val date = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
                 .parse(dateField.text.toString())?.time ?: 0L
@@ -68,9 +70,11 @@ class AddMeasurementActivity : AppCompatActivity() {
                 height = height,
                 weight = weight,
                 headCircumference = head,
+                chestCircumference = chest, // 👈 сюда
                 date = date,
                 note = note
             )
+
 
             scope.launch {
                 val db = AppDatabase.getInstance(applicationContext)
