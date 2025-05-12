@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.diplomv1.R
 import com.example.diplomv1.data.db.AppDatabase
+import com.example.diplomv1.data.model.Child
+import com.example.diplomv1.utils.EncryptedPrefs
 import kotlinx.coroutines.*
 
 class ChildListActivity : AppCompatActivity() {
@@ -30,16 +32,18 @@ class ChildListActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        layout.removeAllViews()
 
-        layout.removeAllViews() // Очистка старого списка перед загрузкой
+        val userId = EncryptedPrefs.getUserId(this)
+        if (userId == -1) return
 
         val db = AppDatabase.getInstance(applicationContext)
         scope.launch {
             val children = withContext(Dispatchers.IO) {
-                db.childDao().getAll()
+                db.childDao().getAllByUser(userId)
             }
 
-            children.forEach { child ->
+            children.forEach { child: Child ->
                 val tv = TextView(this@ChildListActivity)
                 tv.text = "${child.surname} ${child.name} ${child.patronymic}"
                 tv.textSize = 18f

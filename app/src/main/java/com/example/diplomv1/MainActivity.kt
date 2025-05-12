@@ -15,9 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         val logoutButton = findViewById<Button>(R.id.buttonLogout)
         logoutButton.setOnClickListener {
-            val prefs = EncryptedPrefs.getPrefs(this)
-            prefs.edit().remove("login").apply()
-
+            EncryptedPrefs.clearUserId(this)
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }

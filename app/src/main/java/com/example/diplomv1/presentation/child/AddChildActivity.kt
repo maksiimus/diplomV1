@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.diplomv1.R
 import com.example.diplomv1.data.db.AppDatabase
 import com.example.diplomv1.data.model.Child
+import com.example.diplomv1.utils.EncryptedPrefs
 import kotlinx.coroutines.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -54,8 +55,15 @@ class AddChildActivity : AppCompatActivity() {
 
             val gender = findViewById<RadioButton>(genderId).text.toString()
             val birthDate = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).parse(dateStr)?.time ?: 0L
+            val userId = EncryptedPrefs.getUserId(this)
+
+            if (userId == -1) {
+                Toast.makeText(this, "Ошибка: пользователь не найден", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             val child = Child(
+                userId = userId,
                 surname = surname,
                 name = name,
                 patronymic = patronymic,

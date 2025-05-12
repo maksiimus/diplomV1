@@ -9,7 +9,7 @@ import com.example.diplomv1.data.dao.ChildDao
 import com.example.diplomv1.data.model.User
 import com.example.diplomv1.data.model.Child
 
-@Database(entities = [User::class, Child::class], version = 2)
+@Database(entities = [User::class, Child::class], version = 3)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun childDao(): ChildDao
