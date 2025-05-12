@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DiplomV1</string>
+    <string name="hint_login">Логин</string>
+    <string name="hint_password">Пароль</string>
+    <string name="button_login">Войти</string>
+    <string name="login_success">Успешный вход</string>
+    <string name="login_failed">Неверный логин или пароль</string>
+
 </resources>
