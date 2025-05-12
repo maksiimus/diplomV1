@@ -7,5 +7,6 @@
     <string name="login_failed">Неверный логин или пароль</string>
     <string name="button_register">Зарегистрироваться</string>
     <string name="go_to_register">Зарегистрироваться</string>
+    <string name="main_welcome">Добро пожаловать в MainActivity!</string>
 
 </resources>
