@@ -9,5 +9,16 @@
     <string name="go_to_register">Зарегистрироваться</string>
     <string name="main_welcome">Добро пожаловать в MainActivity!</string>
     <string name="button_logout">Выйти</string>
+    <string name="button_add_child">Добавить ребёнка</string>
+    <string name="hint_surname">Фамилия</string>
+    <string name="hint_name">Имя</string>
+    <string name="hint_patronymic">Отчество</string>
+    <string name="hint_birth_date">Дата рождения</string>
+    <string name="gender_male">Мальчик</string>
+    <string name="gender_female">Девочка</string>
+    <string name="button_save">Сохранить</string>
+    <string name="child_added">Ребёнок добавлен</string>
+    <string name="fill_required_fields">Заполните все обязательные поля</string>
+    <string name="button_to_children">Перейти к детям</string>
 
 </resources>

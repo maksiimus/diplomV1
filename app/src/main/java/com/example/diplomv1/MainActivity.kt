@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.diplomv1.presentation.child.ChildListActivity
+import com.example.diplomv1.presentation.login.LoginActivity
 import com.example.diplomv1.utils.EncryptedPrefs
 
 class MainActivity : AppCompatActivity() {
@@ -16,8 +18,13 @@ class MainActivity : AppCompatActivity() {
             val prefs = EncryptedPrefs.getPrefs(this)
             prefs.edit().remove("login").apply()
 
-            startActivity(Intent(this, com.example.diplomv1.presentation.login.LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
+        }
+
+        val toChildrenButton = findViewById<Button>(R.id.buttonToChildren)
+        toChildrenButton.setOnClickListener {
+            startActivity(Intent(this, ChildListActivity::class.java))
         }
     }
 }
