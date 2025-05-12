@@ -16,6 +16,7 @@ class MeasurementListActivity : AppCompatActivity() {
     private val scope = CoroutineScope(Dispatchers.Main + Job())
     private lateinit var layout: LinearLayout
     private lateinit var addButton: Button
+    private var childId: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,7 @@ class MeasurementListActivity : AppCompatActivity() {
         layout = findViewById(R.id.measurement_list_container)
         addButton = findViewById(R.id.button_add_measurement)
 
-        val childId = intent.getIntExtra("childId", -1)
+        childId = intent.getIntExtra("childId", -1)
         val childName = intent.getStringExtra("childName") ?: ""
 
         if (childId == -1) {
@@ -40,8 +41,13 @@ class MeasurementListActivity : AppCompatActivity() {
             intent.putExtra("childId", childId)
             startActivity(intent)
         }
+    }
 
-        loadMeasurements(childId)
+    override fun onResume() {
+        super.onResume()
+        if (childId != -1) {
+            loadMeasurements(childId)
+        }
     }
 
     private fun loadMeasurements(childId: Int) {

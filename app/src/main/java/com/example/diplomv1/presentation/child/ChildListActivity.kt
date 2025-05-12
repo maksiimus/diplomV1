@@ -47,6 +47,15 @@ class ChildListActivity : AppCompatActivity() {
                 val tv = TextView(this@ChildListActivity)
                 tv.text = "${child.surname} ${child.name} ${child.patronymic}"
                 tv.textSize = 18f
+                tv.setPadding(0, 12, 0, 12)
+
+                tv.setOnClickListener {
+                    val intent = Intent(this@ChildListActivity, com.example.diplomv1.presentation.measurement.MeasurementListActivity::class.java)
+                    intent.putExtra("childId", child.id)
+                    intent.putExtra("childName", "${child.surname} ${child.name}")
+                    startActivity(intent)
+                }
+
                 layout.addView(tv)
             }
         }
