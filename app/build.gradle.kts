@@ -49,10 +49,10 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    implementation("androidx.appcompat:appcompat:1.6.1")
 
     // ✅ Room
     val roomVersion = "2.6.1"
-    implementation("androidx.appcompat:appcompat:1.6.1")
 
     implementation("androidx.room:room-runtime:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")

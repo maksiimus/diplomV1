@@ -17,14 +17,20 @@
         <activity
             android:name=".presentation.login.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.DiplomV1">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- MainActivity оставляем без intent-filter -->
+        <!-- RegisterActivity для регистрации пользователей -->
+        <activity
+            android:name=".presentation.register.RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- MainActivity пока как заглушка -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
