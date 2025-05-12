@@ -6,5 +6,6 @@
     <string name="login_success">Успешный вход</string>
     <string name="login_failed">Неверный логин или пароль</string>
     <string name="button_register">Зарегистрироваться</string>
+    <string name="go_to_register">Зарегистрироваться</string>
 
 </resources>
