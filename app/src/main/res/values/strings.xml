@@ -7,7 +7,7 @@
     <string name="login_failed">Неверный логин или пароль</string>
     <string name="button_register">Зарегистрироваться</string>
     <string name="go_to_register">Зарегистрироваться</string>
-    <string name="main_welcome">Добро пожаловать в MainActivity!</string>
+    <string name="main_welcome">Главная</string>
     <string name="button_logout">Выйти</string>
     <string name="button_add_child">Добавить ребёнка</string>
     <string name="hint_surname">Фамилия</string>
