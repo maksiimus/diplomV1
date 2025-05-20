@@ -11,7 +11,6 @@ import com.example.diplomv1.R
 import com.example.diplomv1.data.db.AppDatabase
 import com.example.diplomv1.presentation.register.RegisterActivity
 import com.example.diplomv1.utils.EncryptedPrefs
-import com.example.diplomv1.lms.*
 
 import kotlinx.coroutines.*
 
