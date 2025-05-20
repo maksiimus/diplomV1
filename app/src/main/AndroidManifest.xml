@@ -30,7 +30,6 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
-        <!-- MainActivity пока как заглушка -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

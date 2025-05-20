@@ -11,6 +11,8 @@ import com.example.diplomv1.R
 import com.example.diplomv1.data.db.AppDatabase
 import com.example.diplomv1.presentation.register.RegisterActivity
 import com.example.diplomv1.utils.EncryptedPrefs
+import com.example.diplomv1.utils.LMSCalculator
+
 import kotlinx.coroutines.*
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
@@ -29,6 +31,16 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         }
 
         setContentView(R.layout.activity_login)
+        val x = 15f
+        val l = -1.22f
+        val m = 14.79f
+        val s = 0.077f
+
+        val z = LMSCalculator.calculateZ(x, l, m, s)
+        val centile = LMSCalculator.calculateCentile(z)
+
+        Toast.makeText(this, "Z = %.2f\nCentile = %.1f".format(z, centile), Toast.LENGTH_LONG).show()
+
 
         val db = AppDatabase.getInstance(applicationContext)
         presenter = LoginPresenter(this, db)

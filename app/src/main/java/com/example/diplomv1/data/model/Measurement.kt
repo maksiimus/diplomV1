@@ -10,7 +10,7 @@ data class Measurement(
     val height: Float?,
     val weight: Float?,
     val headCircumference: Float?,
-    val chestCircumference: Float?, // 👈 новое поле
+    val chestCircumference: Float?,
     val date: Long,
     val note: String
 )
