@@ -28,6 +28,13 @@ class MeasurementListActivity : AppCompatActivity() {
         childId = intent.getIntExtra("childId", -1)
         val childName = intent.getStringExtra("childName") ?: ""
 
+        val resultsButton = findViewById<Button>(R.id.button_results)
+        resultsButton.setOnClickListener {
+            val intent = Intent(this, MeasurementResultsOverviewActivity::class.java)
+            intent.putExtra("childId", childId)
+            startActivity(intent)
+        }
+
         val backButton = findViewById<Button>(R.id.buttonBackToChildren)
         backButton.setOnClickListener {
             finish() // вернёт в ChildListActivity

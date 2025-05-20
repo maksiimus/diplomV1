@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonHeightResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Рост" />
+
+    <Button
+        android:id="@+id/buttonWeightResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Вес"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/buttonHeadResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Окружность головы"
+        android:layout_marginTop="16dp" />
+    <Button
+        android:id="@+id/button_back_to_measurements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Назад"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>
