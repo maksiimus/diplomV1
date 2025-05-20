@@ -10,6 +10,7 @@ object LMSRepository {
     private val cache: MutableMap<String, List<LMS>> = mutableMapOf()
 
     fun init(context: Context) {
+        cache.clear()
         for (gender in Gender.values()) {
             for (type in MeasurementType.values()) {
                 val key = key(gender, type)
@@ -51,5 +52,9 @@ object LMSRepository {
 
     private fun key(gender: Gender, type: MeasurementType): String {
         return "${gender.name}/${type.name}"
+    }
+
+    fun clear() {
+        cache.clear()
     }
 }

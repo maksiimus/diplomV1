@@ -42,4 +42,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "null", Toast.LENGTH_LONG).show();
         }
     }
+    override fun onDestroy() {
+        super.onDestroy()
+        LMSRepository.clear()
+    }
 }
