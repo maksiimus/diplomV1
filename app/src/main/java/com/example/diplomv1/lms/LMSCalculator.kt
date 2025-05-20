@@ -1,4 +1,4 @@
-package com.example.diplomv1.utils
+package com.example.diplomv1.lms
 
 import kotlin.math.*
 
@@ -22,9 +22,6 @@ object LMSCalculator {
         return calculateCentile(z)
     }
 
-    /**
-     * Приближение функции ошибок erf(z), точное до ~1.5e-7
-     */
     private fun approximateErf(z: Float): Float {
         val t = 1.0f / (1.0f + 0.3275911f * abs(z))
         val a1 = 0.254829592f
