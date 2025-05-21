@@ -1,34 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@android:color/white">
 
-    <Button
-        android:id="@+id/buttonHeightResult"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Рост" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/buttonWeightResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Вес"
-        android:layout_marginTop="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выберите параметр для оценки"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="24dp" />
 
-    <Button
-        android:id="@+id/buttonHeadResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Окружность головы"
-        android:layout_marginTop="16dp" />
-    <Button
-        android:id="@+id/button_back_to_measurements"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Назад"
-        android:layout_marginTop="24dp" />
+        <Button
+            android:id="@+id/buttonHeightResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📏 Рост"
+            android:backgroundTint="#4FC3F7"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/buttonWeightResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚖️ Вес"
+            android:backgroundTint="#81C784"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/buttonHeadResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🧠 Окружность головы"
+            android:backgroundTint="#BA68C8"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/button_back_to_measurements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Назад"
+            android:backgroundTint="#BDBDBD"
+            android:textColor="#000000" />
+    </LinearLayout>
+</ScrollView>
