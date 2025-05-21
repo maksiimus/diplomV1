@@ -2,12 +2,22 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Новое измерение"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="24dp" />
 
         <EditText
             android:id="@+id/editMeasurementDate"
@@ -15,46 +25,63 @@
             android:layout_height="wrap_content"
             android:hint="Дата измерения"
             android:focusable="false"
-            android:inputType="none" />
+            android:inputType="none"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="12dp" />
 
         <EditText
             android:id="@+id/editHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Рост (см)"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/editWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Вес (кг)"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/editHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Окружность головы (см)"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="8dp" />
+
         <EditText
             android:id="@+id/editChest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Окружность груди (см)"
-            android:inputType="numberDecimal" />
-
+            android:inputType="numberDecimal"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/editNote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Комментарий" />
+            android:hint="Комментарий"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:maxLines="4"
+            android:backgroundTint="#BDBDBD"
+            android:layout_marginBottom="24dp" />
 
         <Button
             android:id="@+id/buttonSaveMeasurement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Сохранить" />
+            android:text="Сохранить"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </ScrollView>

@@ -13,6 +13,7 @@ class MeasurementResultsOverviewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_measurement_results_overview)
 
         val childId = intent.getIntExtra("childId", -1)
+        val measurementId = intent.getIntExtra("measurementId", -1) // добавлено
 
         val buttonMap = mapOf(
             R.id.buttonHeightResult to "height",
@@ -25,12 +26,17 @@ class MeasurementResultsOverviewActivity : AppCompatActivity() {
                 val intent = Intent(this, MeasurementResultDetailActivity::class.java)
                 intent.putExtra("childId", childId)
                 intent.putExtra("parameter", param)
+                if (measurementId != -1) {
+                    intent.putExtra("measurementId", measurementId) // передаём дальше
+                }
                 startActivity(intent)
             }
         }
-        val backButton = findViewById<Button>(R.id.button_back_to_measurements)
-        backButton.setOnClickListener {
+
+        findViewById<Button>(R.id.button_back_to_measurements).setOnClickListener {
             finish()
         }
     }
 }
+
+

@@ -73,21 +73,37 @@ class MeasurementListActivity : AppCompatActivity() {
             }
 
             val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
+            val inflater = layoutInflater
 
             measurements.forEach { m: Measurement ->
-                val tv = TextView(this@MeasurementListActivity)
+                val card = inflater.inflate(R.layout.item_measurement_card, layout, false)
+
+                val dateText = card.findViewById<TextView>(R.id.textMeasurementDate)
+                val paramText = card.findViewById<TextView>(R.id.textMeasurementParams)
+                val resultButton = card.findViewById<Button>(R.id.buttonMeasurementResults)
+
+                val formattedDate = dateFormat.format(Date(m.date))
+                dateText.text = "Дата: $formattedDate"
+
                 val text = buildString {
-                    append("Дата: ${dateFormat.format(Date(m.date))}\n")
-                    if (m.height != null) append("Рост: ${m.height} см\n")
-                    if (m.weight != null) append("Вес: ${m.weight} кг\n")
-                    if (m.headCircumference != null) append("Окружность головы: ${m.headCircumference} см\n")
-                    if (m.chestCircumference != null) append("Окружность груди: ${m.chestCircumference} см\n")
-                    if (m.note.isNotBlank()) append("Комментарий: ${m.note}")
+                    if (m.height != null) append("📏 Рост: ${m.height} см\n")
+                    if (m.weight != null) append("⚖️ Вес: ${m.weight} кг\n")
+                    if (m.headCircumference != null) append("🧠 ОГ: ${m.headCircumference} см\n")
+                    if (m.chestCircumference != null) append("❤️ ОГр: ${m.chestCircumference} см\n")
+                    if (m.note.isNotBlank()) append("📝 ${m.note}")
                 }
-                tv.text = text
-                tv.setPadding(0, 12, 0, 12)
-                layout.addView(tv)
+                paramText.text = text.trim()
+
+                resultButton.setOnClickListener {
+                    val intent = Intent(this@MeasurementListActivity, MeasurementResultsOverviewActivity::class.java)
+                    intent.putExtra("childId", childId)
+                    intent.putExtra("measurementId", m.id) // на будущее
+                    startActivity(intent)
+                }
+
+                layout.addView(card)
             }
         }
     }
+
 }

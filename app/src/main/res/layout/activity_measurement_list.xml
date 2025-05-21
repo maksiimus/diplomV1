@@ -3,28 +3,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/textMeasurementTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Измерения ребёнка"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/button_add_measurement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Добавить измерение"
-        android:layout_marginBottom="16dp"/>
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="12dp" />
+
     <Button
         android:id="@+id/button_results"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Результаты"
-        android:layout_marginTop="12dp" />
+        android:backgroundTint="#2196F3"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="12dp" />
 
     <Button
         android:id="@+id/buttonBackToChildren"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="К списку детей"
-        android:layout_marginBottom="12dp" />
+        android:backgroundTint="#BDBDBD"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp" />
 
+    <TextView
+        android:id="@+id/textNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Нет измерений"
+        android:textColor="#888888"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginBottom="12dp" />
 
     <ScrollView
         android:layout_width="match_parent"

@@ -24,6 +24,7 @@ class MeasurementResultDetailActivity : AppCompatActivity() {
 
         val childId = intent.getIntExtra("childId", -1)
         val parameter = intent.getStringExtra("parameter") ?: ""
+        val measurementId = intent.getIntExtra("measurementId", -1) // добавлено
 
         val valueView = findViewById<TextView>(R.id.textValue)
         val centileView = findViewById<TextView>(R.id.textCentile)
@@ -39,21 +40,26 @@ class MeasurementResultDetailActivity : AppCompatActivity() {
                 db.measurementDao().getAllByChild(childId)
             }
 
-            val latest = measurements.firstOrNull() ?: run {
+            val target = if (measurementId != -1) {
+                measurements.find { it.id == measurementId }
+            } else {
+                measurements.firstOrNull()
+            }
+
+            if (target == null) {
                 valueView.text = "Нет измерений"
                 return@launch
             }
 
             val value = when (parameter) {
-                "height" -> latest.height
-                "weight" -> latest.weight
-                "headcirc" -> latest.headCircumference
+                "height" -> target.height
+                "weight" -> target.weight
+                "headcirc" -> target.headCircumference
                 else -> null
             }
 
-            // Здесь можно использовать дату рождения, если она есть.
             val now = Calendar.getInstance()
-            val then = Calendar.getInstance().apply { timeInMillis = latest.date }
+            val then = Calendar.getInstance().apply { timeInMillis = target.date }
             val ageInMonths = floor((now.timeInMillis - then.timeInMillis) / (1000L * 60 * 60 * 24 * 30.44)).toFloat()
 
             val genderPref = EncryptedPrefs.getPrefs(this@MeasurementResultDetailActivity)
@@ -75,9 +81,10 @@ class MeasurementResultDetailActivity : AppCompatActivity() {
                 valueView.text = "Данные отсутствуют"
             }
         }
-        val backButton = findViewById<Button>(R.id.button_back_to_parameters)
-        backButton.setOnClickListener {
+
+        findViewById<Button>(R.id.button_back_to_parameters).setOnClickListener {
             finish()
         }
     }
+
 }
